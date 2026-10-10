@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Hospital - Excellence in Healthcare</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/48/hospital-3.png">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #dc2626;
+            --accent: #059669;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --soft-blue: #dbeafe;
+            --soft-green: #d1fae5;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(37, 99, 235, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark) !important;
+            margin: 0 5px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+            background: var(--soft-blue);
+        }
+        
+        /* Banner Section */
+      /* Banner Section */
+.banner-section {
+    background: linear-gradient(rgba(37, 99, 235, 0.7), rgba(37, 99, 235, 0.7)), 
+                url('ChatGPT Image Oct 12, 2025, 11_31_53 PM.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+        }
+        
+        .banner-section h1 {
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .banner-section .lead {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .doctor-card, .service-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .doctor-card:hover, .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .doctor-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--soft-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        /* Forms */
+        .form-control, .form-select {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Table */
+        .table th {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px;
+        }
+        
+        .table td {
+            padding: 12px 15px;
+            border-color: #e2e8f0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner-section {
+                padding: 80px 0;
+                text-align: center;
+            }
+            
+            .banner-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-hospital me-2"></i>National Hospital
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#appointments">Appointments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#patients">Patients</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section id="home" class="banner-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold mb-4">Your Health is Our Priority</h1>
+                    <p class="lead mb-4">Providing world-class healthcare with compassion and cutting-edge technology for over three decades.</p>
+                    <a href="#appointments" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Section -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Welcome to National Hospital</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <p class="mb-4">At National Hospital, we are dedicated to providing exceptional medical care with a focus on patient well-being and satisfaction. Our state-of-the-art facilities and experienced medical professionals ensure you receive the best possible treatment.</p>
+                    <p>We believe in a holistic approach to healthcare, combining advanced medical technology with compassionate care to help our patients achieve optimal health outcomes.</p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="service-icon me-3">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">100+ Doctors</h5>
+                                    <small class="text-muted">Expert Medical Team</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="service-icon me-3">
+                                    <i class="fas fa-procedures"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">24/7 Service</h5>
+                                    <small class="text-muted">Emergency Care</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-3 text-primary">Our Mission</h3>
+                            <p class="card-text">To provide exceptional healthcare services that improve the health and well-being of our community through innovation, compassion, and excellence.</p>
+                            <h3 class="card-title mt-4 mb-3 text-primary">Our Vision</h3>
+                            <p class="card-text">To be the leading healthcare institution recognized for clinical excellence and patient-centered care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors">
+        <div class="container">
+            <h2 class="text-center section-title">Our Medical Specialists</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card doctor-card h-100">
+                        <img src="c:\Users\deepe\Downloads\an-indian-young-female-doctor-isolated-on-green-ai-generated-photo.jpg" 
+                             class="card-img-top" alt="Dr. Sadia Jabbar">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dr. Sadia Jabbar</h5>
+                            <p class="card-text text-muted">Cardiologist</p>
+                            <p class="card-text">8 years of experience in cardiovascular diseases and treatments.</p>
+                            <span class="badge bg-primary">FCPS,MBBS, Cardiology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card doctor-card h-100">
+                        <img src="c:\Users\deepe\Downloads\360_F_305690038_kio1DI7qtf1kMPT4z6keI3GwB0zP6Sch.jpg" 
+                             class="card-img-top" alt="Dr. Imran Cheema">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dr. Imran Cheema</h5>
+                            <p class="card-text text-muted">Neurologist</p>
+                            <p class="card-text">10 years of specialized experience in neurological disorders.</p>
+                            <span class="badge bg-primary">MD, Neurology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card doctor-card h-100">
+                        <img src="c:\Users\deepe\Downloads\images (1).jpeg" 
+                             class="card-img-top" alt="Dr. Maria Khan">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dr. Maria Khan</h5>
+                            <p class="card-text text-muted">Pediatrician</p>
+                            <p class="card-text">7 years of experience in child healthcare and development.</p>
+                            <span class="badge bg-primary">MBBS, Pediatrics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointments Section -->
+    <section id="appointments" class="bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Book an Appointment</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow border-0">
+                        <div class="card-body p-4">
+                            <form action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter your name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" placeholder="Enter your phone" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Preferred Date</label>
+                                        <input type="date" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Department</label>
+                                    <select class="form-select" required>
+                                        <option value="">Select Department</option>
+                                        <option>Cardiology</option>
+                                        <option>Neurology</option>
+                                        <option>Pediatrics</option>
+                                        <option>Orthopedics</option>
+                                        <option>Dermatology</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Message (Optional)</label>
+                                    <textarea class="form-control" rows="3" placeholder="Additional information"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Book Appointment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patients Section -->
+    <section id="patients">
+        <div class="container">
+            <h2 class="text-center section-title">Patient Records</h2>
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Condition</th>
+                                    <th>Admission Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>P1001</td>
+                                    <td>John Smith</td>
+                                    <td>45</td>
+                                    <td>Hypertension</td>
+                                    <td>2024-10-15</td>
+                                    <td><span class="badge bg-success">Discharged</span></td>
+                                </tr>
+                                <tr>
+                                    <td>P1002</td>
+                                    <td>Maria Garcia</td>
+                                    <td>32</td>
+                                    <td>Pneumonia</td>
+                                    <td>2025-10-13</td>
+                                    <td><span class="badge bg-warning">Under Treatment</span></td>
+                                </tr>
+                                <tr>
+                                    <td>P1003</td>
+                                    <td>Robert Johnson</td>
+                                    <td>58</td>
+                                    <td>Diabetes</td>
+                                    <td>2025-10-02</td>
+                                    <td><span class="badge bg-info">Observation</span></td>
+                                </tr>
+                                <tr>
+                                    <td>P1004</td>
+                                    <td>Lisa Wong</td>
+                                    <td>29</td>
+                                    <td>Appendicitis</td>
+                                    <td>2025-09-22</td>
+                                    <td><span class="badge bg-success">Discharged</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Our Medical Services</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h5>Cardiology</h5>
+                        <p>Comprehensive heart care including diagnostics and treatment for cardiac conditions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h5>Neurology</h5>
+                        <p>Expert diagnosis and treatment for disorders of the nervous system and brain.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h5>Pediatrics</h5>
+                        <p>Specialized healthcare for infants, children, and adolescents.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h5>Orthopedics</h5>
+                        <p>Treatment for musculoskeletal injuries and joint replacement surgery.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-allergies"></i>
+                        </div>
+                        <h5>Dermatology</h5>
+                        <p>Comprehensive skin care services for various dermatological conditions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h5>Emergency Care</h5>
+                        <p>24/7 emergency services with rapid response teams and modern facilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center section-title">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body">
+                            <h4 class="mb-4">Get in Touch</h4>
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-map-marker-alt text-primary me-3 fs-5"></i>
+                                    <div>
+                                        <h6 class="mb-0">Address</h6>
+                                        <p class="mb-0">Lahore , Pakistan</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-phone text-primary me-3 fs-5"></i>
+                                    <div>
+                                        <h6 class="mb-0">Phone</h6>
+                                        <p class="mb-0">+92 3316619215</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-envelope text-primary me-3 fs-5"></i>
+                                    <div>
+                                        <h6 class="mb-0">Email</h6>
+                                        <p class="mb-0">@nationalhospital000.gmail</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-clock text-primary me-3 fs-5"></i>
+                                    <div>
+                                        <h6 class="mb-0">Working Hours</h6>
+                                        <p class="mb-0">24/7 Emergency Services</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-light rounded p-4 text-center">
+                                <i class="fas fa-map-marked-alt fa-2x text-muted mb-3"></i>
+                                <p class="mb-0">Hospital Location Map</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body">
+                            <h4 class="mb-4">Send us a Message</h4>
+                            <form action="#" method="POST">
+                                <div class="mb-3">
+                                    <label class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Subject</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Message</label>
+                                    <textarea class="form-control" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3"><i class="fas fa-hospital me-2"></i>National Hospital</h5>
+                    <p>Providing exceptional healthcare services with compassion and excellence since 1990.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#doctors" class="text-light text-decoration-none">Doctors</a></li>
+                        <li class="mb-2"><a href="#appointments" class="text-light text-decoration-none">Appointments</a></li>
+                        <li class="mb-2"><a href="#services" class="text-light text-decoration-none">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Cardiology</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Neurology</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Pediatrics</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Emergency Care</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5 class="mb-3">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>NADIA HUSSAIN KHAN</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i>+92 3316619215</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>@nationalhospital000</li>
+                        <li><i class="fas fa-clock me-2"></i>24/7 Emergency</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 National Hospital. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (for navbar toggle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
